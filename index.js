@@ -1,11 +1,14 @@
 'use strict'
 
 var assert = require('assert-ok')
-var format = require('simple-format')
 
-module.exports = function createDataUri (type, data) {
-  assert(type, 'mime type required')
+module.exports = function createDataUri (options, data) {
+  var type = typeof options === 'object'
+    ? [options.type, options.charset].filter(Boolean).join(';charset=')
+    : options
+
+  assert(typeof type === 'string', 'mime type required')
   assert(data, 'data required')
 
-  return format('data:%s;base64,%s', type, data)
+  return ['data:' + type, 'base64,' + data].join(';')
 }

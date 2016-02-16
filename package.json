@@ -26,7 +26,6 @@
     "index.js"
   ],
   "dependencies": {
-    "assert-ok": "~1.0.0",
-    "simple-format": "~1.0.0"
+    "assert-ok": "~1.0.0"
   }
 }

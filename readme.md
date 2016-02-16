@@ -26,9 +26,9 @@ createDataUri('image/jpeg', 'photo')
 ##### type
 
 *Required*  
-Type: `string`
+Type: `string` / `object`
 
-The mime type for the data.
+The mime type for the data. You can optionally pass a `{type, charset}` object as well.
 
 ##### data
 
